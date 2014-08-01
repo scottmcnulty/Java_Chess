@@ -1,0 +1,26 @@
+package edu.neumont.smcnulty.boardsetup;
+
+public class Game 
+{
+
+	
+	private Board board;
+	private BoardModel model;
+	private BoardLoader loader;
+	
+	
+	
+	
+	public Game()
+	{
+		
+		
+		board = new Board();
+	}
+
+	public void makePieces()
+	{
+		
+		
+	}
+}

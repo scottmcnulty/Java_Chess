@@ -1,0 +1,24 @@
+package edu.neumont.smcnulty.boardsetup;
+
+import java.util.HashMap;
+
+public class BoardModel 
+{
+	
+	// the board will be saved in a map with the 64 squares as keys (e.g. d6)
+	private HashMap<String, Piece> map = new HashMap();
+	
+	
+	public BoardModel()
+	{
+		
+		
+	}
+	
+	public String toString()
+	{
+		
+		return "a";
+	}
+}
+

@@ -1,0 +1,162 @@
+package edu.neumont.smcnulty.boardsetup;
+
+/*********************************
+ ********************************* 
+ **       Scott McNulty         **
+ **     Neumont University      **
+ **     Spring Quarter 2012     **
+ **         PRO180 Java         **
+ **        Board Module         **
+ *********************************
+ *********************************/
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class Board 
+{
+
+	/************************
+	 *  Instance Variables  *
+	 ************************/
+	private JFrame frame;
+	private final int APPLICATION_SIZE_WIDTH = 1000;
+	private final int APPLICATION_SIZE_HEIGHT = 1000;
+	private Square a1,a2,a3,a4,a5,a6,a7,a8,b1,b2,b3,b4,b5,b6,b7,b8,c1,c2,c3,c4,c5,c6,c7,c8,d1,d2,d3,d4,d5,d6,d7,d8;
+	private Square e1,e2,e3,e4,e5,e6,e7,e8,f1,f2,f3,f4,f5,f6,f7,f8,g1,g2,g3,g4,g5,g6,g7,g8,h1,h2,h3,h4,h5,h6,h7,h8;
+	private boolean colorShifter;
+	
+	
+	/********************
+	 *  Constructor(s)  *
+	 ********************/ 
+	public Board()
+	{
+		frame = new JFrame("Scott's Chess");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setSize(APPLICATION_SIZE_WIDTH, APPLICATION_SIZE_HEIGHT);
+		frame.setLocationRelativeTo(null);
+		frame.setLayout(new GridLayout(8,8));
+		
+		colorShifter = false;
+		makePanels();
+	
+		frame.setVisible(true);
+		//h1.setBackground(Color.black);
+	}
+	
+	
+	
+	/*************************
+	 *     Other Methods     *
+	 *************************/
+	
+	public void makePanels()
+	{
+		addPanels(a8 = new Square("a8"));
+		addPanels(b8 = new Square("b8"));
+		addPanels(c8 = new Square("c8"));
+		addPanels(d8 = new Square("d8"));
+		addPanels(e8 = new Square("e8"));
+		addPanels(f8 = new Square("f8"));
+		addPanels(g8 = new Square("g8"));
+		addPanels(h8 = new Square("h8"));
+		colorShifter = !colorShifter;
+		addPanels(a7 = new Square("a7"));
+		addPanels(b7 = new Square("b7"));
+		addPanels(c7 = new Square("c7"));
+		addPanels(d7 = new Square("d7"));
+		addPanels(e7 = new Square("e7"));
+		addPanels(f7 = new Square("f7"));
+		addPanels(g7 = new Square("g7"));
+		addPanels(h7 = new Square("h7"));
+		colorShifter = !colorShifter;
+		addPanels(a6 = new Square("a6"));
+		addPanels(b6 = new Square("b6"));
+		addPanels(c6 = new Square("c6"));
+		addPanels(d6 = new Square("d6"));
+		addPanels(e6 = new Square("e6"));
+		addPanels(f6 = new Square("f6"));
+		addPanels(g6 = new Square("g6"));
+		addPanels(h6 = new Square("h6"));
+		colorShifter = !colorShifter;
+		addPanels(a5 = new Square("a5"));
+		addPanels(b5 = new Square("b5"));
+		addPanels(c5 = new Square("c5"));
+		addPanels(d5 = new Square("d5"));
+		addPanels(e5 = new Square("e5"));
+		addPanels(f5 = new Square("f5"));
+		addPanels(g5 = new Square("g5"));
+		addPanels(h5 = new Square("h5"));
+		colorShifter = !colorShifter;
+		addPanels(a4 = new Square("a4"));
+		addPanels(b4 = new Square("b4"));
+		addPanels(c4 = new Square("c4"));
+		addPanels(d4 = new Square("d4"));
+		addPanels(e4 = new Square("e4"));
+		addPanels(f4 = new Square("f4"));
+		addPanels(g4 = new Square("g4"));
+		addPanels(h4 = new Square("h4"));
+		colorShifter = !colorShifter;
+		addPanels(a3 = new Square("a3"));
+		addPanels(b3 = new Square("b3"));
+		addPanels(c3 = new Square("c3"));
+		addPanels(d3 = new Square("d3"));
+		addPanels(e3 = new Square("e3"));
+		addPanels(f3 = new Square("f3"));
+		addPanels(g3 = new Square("g3"));
+		addPanels(h3 = new Square("h3"));
+		colorShifter = !colorShifter;
+		addPanels(a2 = new Square("a2"));
+		addPanels(b2 = new Square("b2"));
+		addPanels(c2 = new Square("c2"));
+		addPanels(d2 = new Square("d2"));
+		addPanels(e2 = new Square("e2"));
+		addPanels(f2 = new Square("f2"));
+		addPanels(g2 = new Square("g2"));
+		addPanels(h2 = new Square("h2"));
+		colorShifter = !colorShifter;
+		addPanels(a1 = new Square("a1"));
+		addPanels(b1 = new Square("b1"));
+		addPanels(c1 = new Square("c1"));
+		addPanels(d1 = new Square("d1"));
+		addPanels(e1 = new Square("e1"));
+		addPanels(f1 = new Square("f1"));
+		addPanels(g1 = new Square("g1"));
+		addPanels(h1 = new Square("h1"));
+		
+	}
+	
+	public void addPanels(Square panel)
+	{
+		if(colorShifter)
+		{
+			panel.setBackground(Color.gray);
+			colorShifter = false;
+		}
+		else
+		{
+			panel.setBackground(Color.lightGray);
+			colorShifter = true;
+		}
+		
+		
+		frame.add(panel);
+		panel.setVisible(true);
+		
+	}
+	
+	
+	
+	
+	
+	/************************
+	 *  To String OVERRIDE  *
+	 ************************/
+	
+	
+}

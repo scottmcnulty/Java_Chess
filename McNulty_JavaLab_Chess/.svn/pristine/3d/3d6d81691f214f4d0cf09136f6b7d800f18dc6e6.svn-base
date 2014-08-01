@@ -1,0 +1,21 @@
+package edu.neumont.smcnulty.boardsetup;
+
+import javax.swing.JPanel;
+
+public class Square extends JPanel
+{
+	
+	protected String position;
+	
+	public Square(String position)
+	{
+		super();
+		this.position = position;
+	}
+
+	
+	public void updateSquare()
+	{
+		
+	}
+}

@@ -1,0 +1,55 @@
+package edu.neumont.smcnulty.boardsetup;
+
+
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+
+public abstract class Piece 
+{
+
+	public enum Type {KING, QUEEN, ROOK, BISHOP, KNIGHT, PAWN}
+	public enum Color {LIGHT, DARK}
+	
+	
+	protected final Type p_Type;
+	protected final Color p_Color;
+	protected ImageIcon image;
+	protected ArrayList<String> goodMoves;
+	
+	public abstract void move();
+	
+	
+	public Piece(Type t, Color c, String i)
+	{
+		p_Type = t;
+		p_Color = c;
+		image = new ImageIcon(i);
+	}
+	
+	public ImageIcon getImage() 
+	{
+		return image;
+	}
+
+
+	public void setImage(ImageIcon image) 
+	{
+		this.image = image;
+	}
+
+
+	public Type getP_Type() 
+	{
+		return p_Type;
+	}
+
+
+	public Color getP_Color() 
+	{
+		return p_Color;
+	}
+	
+	
+		
+}
